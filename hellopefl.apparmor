@@ -1,0 +1,11 @@
+{
+    "policy_groups": [],
+    "policy_version": 20.04,
+    "read_path": [
+        "/usr/share/perl/"
+    ],
+    "write_dir": [
+    	"/home/phablet/"
+    }
+
+}

@@ -1,0 +1,151 @@
+clickable_minimum_required: 8.0.0
+builder: cmake
+kill: hellopefl
+skip_review: true
+dependencies_target: 
+    - "libefl-all-dev"
+    - "perl-modules-5.30"
+libraries:
+    pEFL:
+        dependencies_host:
+            - "gcc-9-aarch64-linux-gnu"
+        dependencies_target: 
+            - "libefl-all-dev"
+            #- "libc6-dev-armhf-cross:all"
+            #- "libc6-dev-armel"
+            - "libextutils-pkgconfig-perl:all"
+        builder: custom
+        build: 
+            - "perl ${ROOT}/utils/install-pEFL.pl ${INSTALL_DIR}"
+install_root_data:
+    - "build/aarch64-linux-gnu/pEFL"
+    - "bin/hello.pl"
+install_lib:
+    - "/usr/lib/$ARCH_TRIPLET/libelementary.so.1"
+    - "/usr/lib/$ARCH_TRIPLET/libevas.so.1"
+    - "/usr/lib/$ARCH_TRIPLET/libecore.so.1"
+    - "/usr/lib/$ARCH_TRIPLET/libeina.so.1"
+    - /usr/lib/aarch64-linux-gnu/libefl.so.1
+    - /usr/lib/aarch64-linux-gnu/libefl.so.1.23.3
+    - /usr/lib/aarch64-linux-gnu/libeina.so.1
+    - /usr/lib/aarch64-linux-gnu/libeina.so.1.23.3
+    - /usr/lib/aarch64-linux-gnu/libeo.so.1
+    - /usr/lib/aarch64-linux-gnu/libeo.so.1.23.3
+    - /usr/lib/aarch64-linux-gnu/libeo_dbg.so.1
+    - /usr/lib/aarch64-linux-gnu/libeo_dbg.so.1.23.3
+    - /usr/lib/aarch64-linux-gnu/libunwind-aarch64.so.*
+    - /usr/lib/aarch64-linux-gnu/libunwind-coredump.so.*
+    - /usr/lib/aarch64-linux-gnu/libunwind-ptrace.so.*
+    - /usr/lib/aarch64-linux-gnu/libunwind.so.*
+    - /usr/lib/aarch64-linux-gnu/edje/modules/elm/v-1.23/module.so
+    - /usr/lib/aarch64-linux-gnu/elementary/modules/access_output/v-1.23/module.so
+    - /usr/lib/aarch64-linux-gnu/elementary/modules/prefs/v-1.23/module.so
+    - /usr/lib/aarch64-linux-gnu/elementary/modules/test_entry/v-1.23/module.so
+    - /usr/lib/aarch64-linux-gnu/elementary/modules/test_map/v-1.23/module.so
+    - /usr/lib/aarch64-linux-gnu/elementary/modules/web/none/v-1.23/module.so
+    - /usr/lib/aarch64-linux-gnu/libelementary.so.1
+    - /usr/lib/aarch64-linux-gnu/libelementary.so.1.23.3
+    - /usr/lib/aarch64-linux-gnu/evas/modules/engines/buffer/v-1.23/module.so
+    - /usr/lib/aarch64-linux-gnu/evas/modules/image_loaders/bmp/v-1.23/module.so
+    - /usr/lib/aarch64-linux-gnu/evas/modules/image_loaders/generic/v-1.23/module.so
+    - /usr/lib/aarch64-linux-gnu/evas/modules/image_loaders/gif/v-1.23/module.so
+    - /usr/lib/aarch64-linux-gnu/evas/modules/image_loaders/ico/v-1.23/module.so
+    - /usr/lib/aarch64-linux-gnu/evas/modules/image_loaders/pmaps/v-1.23/module.so
+    - /usr/lib/aarch64-linux-gnu/evas/modules/image_loaders/psd/v-1.23/module.so
+    - /usr/lib/aarch64-linux-gnu/evas/modules/image_loaders/tga/v-1.23/module.so
+    - /usr/lib/aarch64-linux-gnu/evas/modules/image_loaders/tgv/v-1.23/module.so
+    - /usr/lib/aarch64-linux-gnu/evas/modules/image_loaders/tiff/v-1.23/module.so
+    - /usr/lib/aarch64-linux-gnu/evas/modules/image_loaders/wbmp/v-1.23/module.so
+    - /usr/lib/aarch64-linux-gnu/evas/modules/image_loaders/webp/v-1.23/module.so
+    - /usr/lib/aarch64-linux-gnu/evas/modules/image_loaders/xpm/v-1.23/module.so
+    - /usr/lib/aarch64-linux-gnu/evas/modules/image_savers/tgv/v-1.23/module.so
+    - /usr/lib/aarch64-linux-gnu/evas/modules/image_savers/tiff/v-1.23/module.so
+    - /usr/lib/aarch64-linux-gnu/evas/modules/image_savers/webp/v-1.23/module.so
+    - /usr/lib/aarch64-linux-gnu/libevas.so.1
+    - /usr/lib/aarch64-linux-gnu/libevas.so.1.23.3
+    - /usr/lib/aarch64-linux-gnu/ecore/system/systemd/v-1.23/module.so
+    - /usr/lib/aarch64-linux-gnu/ecore/system/upower/v-1.23/module.so
+    - /usr/lib/aarch64-linux-gnu/libecore.so.1
+    - /usr/lib/aarch64-linux-gnu/libecore.so.1.23.3
+    - /usr/lib/aarch64-linux-gnu/libeldbus.so.1
+    - /usr/lib/aarch64-linux-gnu/libeldbus.so.1.23.3
+    - /usr/lib/aarch64-linux-gnu/libecore_x.so.1
+    - /usr/lib/aarch64-linux-gnu/libecore_x.so.1.23.3
+    - /usr/lib/aarch64-linux-gnu/ecore_wl2/engines/dmabuf/v-1.23/module.so
+    - /usr/lib/aarch64-linux-gnu/libecore_wl2.so.1
+    - /usr/lib/aarch64-linux-gnu/libecore_wl2.so.1.23.3
+    - /usr/lib/aarch64-linux-gnu/libeet.so.1
+    - /usr/lib/aarch64-linux-gnu/libeet.so.1.23.3
+    - /usr/lib/aarch64-linux-gnu/libecore_input.so.1
+    - /usr/lib/aarch64-linux-gnu/libecore_input.so.1.23.3
+    - /usr/lib/aarch64-linux-gnu/libecore_input_evas.so.1
+    - /usr/lib/aarch64-linux-gnu/libecore_input_evas.so.1.23.3
+    - /usr/lib/aarch64-linux-gnu/ecore_evas/engines/drm/v-1.23/module.so
+    - /usr/lib/aarch64-linux-gnu/ecore_evas/engines/extn/v-1.23/module.so
+    - /usr/lib/aarch64-linux-gnu/ecore_evas/engines/fb/v-1.23/module.so
+    - /usr/lib/aarch64-linux-gnu/ecore_evas/engines/wayland/v-1.23/module.so
+    - /usr/lib/aarch64-linux-gnu/ecore_evas/engines/x/v-1.23/module.so
+    - /usr/lib/aarch64-linux-gnu/libecore_evas.so.1
+    - /usr/lib/aarch64-linux-gnu/libecore_evas.so.1.23.3
+    - /usr/lib/aarch64-linux-gnu/libemile.so.1
+    - /usr/lib/aarch64-linux-gnu/libemile.so.1.23.3
+    - /usr/lib/aarch64-linux-gnu/libelput.so.1
+    - /usr/lib/aarch64-linux-gnu/libelput.so.1.23.3
+    - /usr/lib/aarch64-linux-gnu/libector.so.1
+    - /usr/lib/aarch64-linux-gnu/libector.so.1.23.3
+    - /usr/lib/aarch64-linux-gnu/liblua5.2.so.0
+    - /usr/lib/aarch64-linux-gnu/liblua5.2.so.0.0.0
+    - /usr/lib/aarch64-linux-gnu/liblua5.2.so.0
+    - /usr/lib/aarch64-linux-gnu/liblua5.2.so.0.0.0
+    - /usr/lib/aarch64-linux-gnu/libecore_file.so.1
+    - /usr/lib/aarch64-linux-gnu/libecore_file.so.1.23.3
+    - /usr/lib/aarch64-linux-gnu/libecore_audio.so.1
+    - /usr/lib/aarch64-linux-gnu/libecore_audio.so.1.23.3
+    - /usr/lib/aarch64-linux-gnu/libecore_avahi.so.1
+    - /usr/lib/aarch64-linux-gnu/libecore_avahi.so.1.23.3
+    - /usr/lib/aarch64-linux-gnu/libecore_con.so.1
+    - /usr/lib/aarch64-linux-gnu/libecore_con.so.1.23.3
+    - /usr/lib/aarch64-linux-gnu/ecore_imf/modules/ibus/v-1.23/module.so
+    - /usr/lib/aarch64-linux-gnu/ecore_imf/modules/scim/v-1.23/module.so
+    - /usr/lib/aarch64-linux-gnu/ecore_imf/modules/wayland/v-1.23/module.so
+    - /usr/lib/aarch64-linux-gnu/ecore_imf/modules/xim/v-1.23/module.so
+    - /usr/lib/aarch64-linux-gnu/libecore_imf.so.1
+    - /usr/lib/aarch64-linux-gnu/libecore_imf.so.1.23.3
+    - /usr/lib/aarch64-linux-gnu/libecore_imf_evas.so.1
+    - /usr/lib/aarch64-linux-gnu/libecore_imf_evas.so.1.23.3
+    - /usr/lib/aarch64-linux-gnu/libecore_ipc.so.1
+    - /usr/lib/aarch64-linux-gnu/libecore_ipc.so.1.23.3
+    - /usr/lib/aarch64-linux-gnu/libedje.so.1
+    - /usr/lib/aarch64-linux-gnu/libedje.so.1.23.3
+    - /usr/lib/aarch64-linux-gnu/efreet/v-1.23/efreet_desktop_cache_create
+    - /usr/lib/aarch64-linux-gnu/efreet/v-1.23/efreet_icon_cache_create
+    - /usr/lib/aarch64-linux-gnu/efreet/v-1.23/efreet_mime_cache_create
+    - /usr/lib/aarch64-linux-gnu/libefreet.so.1
+    - /usr/lib/aarch64-linux-gnu/libefreet.so.1.23.3
+    - /usr/lib/aarch64-linux-gnu/libefreet_mime.so.1
+    - /usr/lib/aarch64-linux-gnu/libefreet_mime.so.1.23.3
+    - /usr/lib/aarch64-linux-gnu/libefreet_trash.so.1
+    - /usr/lib/aarch64-linux-gnu/libefreet_trash.so.1.23.3
+    - /usr/lib/aarch64-linux-gnu/libethumb_client.so.1
+    - /usr/lib/aarch64-linux-gnu/libethumb_client.so.1
+    - /usr/lib/aarch64-linux-gnu/libethumb_client.so.1.23.3
+    - /usr/lib/aarch64-linux-gnu/libelocation.so.1
+    - /usr/lib/aarch64-linux-gnu/libelocation.so.1.23.3
+    - /usr/lib/aarch64-linux-gnu/libephysics.so.1
+    - /usr/lib/aarch64-linux-gnu/libephysics.so.1.23.3
+    - /usr/lib/aarch64-linux-gnu/edje/modules/emotion/v-1.23/module.so
+    - /usr/lib/aarch64-linux-gnu/emotion/modules/gstreamer1/v-1.23/module.so
+    - /usr/lib/aarch64-linux-gnu/ethumb/modules/emotion/v-1.23/module.so
+    - /usr/lib/aarch64-linux-gnu/libemotion.so.1
+    - /usr/lib/aarch64-linux-gnu/libemotion.so.1.23.3
+    - /usr/lib/aarch64-linux-gnu/libeio.so.1
+    - /usr/lib/aarch64-linux-gnu/libeio.so.1.23.3
+    - /usr/lib/aarch64-linux-gnu/eeze/modules/sensor/fake/v-1.23/module.so
+    - /usr/lib/aarch64-linux-gnu/eeze/modules/sensor/udev/v-1.23/module.so
+    - /usr/lib/aarch64-linux-gnu/libeeze.so.1
+    - /usr/lib/aarch64-linux-gnu/libeeze.so.1.23.3
+    - /usr/lib/aarch64-linux-gnu/libembryo.so.1
+    - /usr/lib/aarch64-linux-gnu/libembryo.so.1.23.3
+    - /usr/lib/aarch64-linux-gnu/libethumb.so.1
+    - /usr/lib/aarch64-linux-gnu/libethumb.so.1.23.3
+

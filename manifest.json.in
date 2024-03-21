@@ -1,0 +1,15 @@
+{
+    "name": "hellopefl.maxperl",
+    "description": "A test of a Perl-Efl App",
+    "architecture": "@CLICK_ARCH@",
+    "title": "Hello pEFL",
+    "hooks": {
+        "hellopefl": {
+            "apparmor": "hellopefl.apparmor",
+            "desktop":  "hellopefl.desktop"
+        }
+    },
+    "version": "1.0.0",
+    "maintainer": "Maximilian Lika <Maximilian-Lika@gmx.de>",
+    "framework" : "@CLICK_FRAMEWORK@"
+}

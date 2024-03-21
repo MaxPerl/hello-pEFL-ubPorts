@@ -1,0 +1,8 @@
+[Desktop Entry]
+_Name=Hello pEFL
+Exec=perl hello.pl
+Icon=assets/logo.svg
+Type=Application
+Terminal=false
+X-Lomiri-Touch=true
+X-Lomiri-XMir-Enable=true
